@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlertsAndPickers'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'Advanced usage of native UIAlertController with TextField, TextView, DatePicker, PickerView, TableView, CollectionView and MapView.'
 
 # This description is used to generate tags and improve search results.
@@ -29,12 +29,12 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '12.0'
-
+  s.swift_version = '5.0'
   s.source_files = 'AlertsAndPickers/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'AlertsAndPickers' => ['AlertsAndPickers/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'AlertsAndPickers' => ['AlertsAndPickers/Classes/**/*.png']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

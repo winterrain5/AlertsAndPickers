@@ -5,7 +5,7 @@ public extension UISegmentedControl {
     /// Font of titles
     func title(font: UIFont) {
         let attributes: [NSAttributedString.Key: Any] = [.font: font]
-        setTitleTextAttributes(attributes, for: UIControlState())
+        setTitleTextAttributes(attributes, for: UIControl.State())
         //setNeedsDisplay()
         //layoutIfNeeded()
     }
