@@ -29,8 +29,8 @@
 
 /* Begin PBXFileReference section */
 		0C2982A61FB926F726CA5274 /* Pods_AlertsAndPickers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertsAndPickers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A4F5C3D350956E8CE80F8A6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		3D02227ABFE77CA0156F28F1 /* AlertsAndPickers.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AlertsAndPickers.podspec; path = ../AlertsAndPickers.podspec; sourceTree = "<group>"; };
+		2A4F5C3D350956E8CE80F8A6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3D02227ABFE77CA0156F28F1 /* AlertsAndPickers.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AlertsAndPickers.podspec; path = ../AlertsAndPickers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4A7CCABC24646525E066A762 /* Pods_AlertsAndPickers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertsAndPickers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* AlertsAndPickers_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertsAndPickers_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		8DCDE0C514F9D3F272316750 /* Pods-AlertsAndPickers_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertsAndPickers_Tests.release.xcconfig"; path = "Target Support Files/Pods-AlertsAndPickers_Tests/Pods-AlertsAndPickers_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A44E3959C9EE92E9E2241121 /* Pods-AlertsAndPickers_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertsAndPickers_Example.debug.xcconfig"; path = "Target Support Files/Pods-AlertsAndPickers_Example/Pods-AlertsAndPickers_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D73656A0F8EFD6767A3571D8 /* Pods-AlertsAndPickers_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertsAndPickers_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AlertsAndPickers_Tests/Pods-AlertsAndPickers_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DE85AFD62A80A97966DDD712 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DE85AFD62A80A97966DDD712 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,6 @@
 				D73656A0F8EFD6767A3571D8 /* Pods-AlertsAndPickers_Tests.debug.xcconfig */,
 				8DCDE0C514F9D3F272316750 /* Pods-AlertsAndPickers_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

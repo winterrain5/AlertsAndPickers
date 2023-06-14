@@ -1,0 +1,16 @@
+PODS:
+  - AlertsAndPickers (0.1.0)
+
+DEPENDENCIES:
+  - AlertsAndPickers (from `../`)
+
+EXTERNAL SOURCES:
+  AlertsAndPickers:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AlertsAndPickers: 0f6a1c23e2a2e8c6170519158aaf904874dbe4a0
+
+PODFILE CHECKSUM: 74221599d7cceed4e38aa226eda1df2e12f24bb8
+
+COCOAPODS: 1.11.2
