@@ -96,7 +96,6 @@ final class PhotoLibraryPickerViewController: UIViewController {
         $0.register(ItemWithImage.self, forCellWithReuseIdentifier: String(describing: ItemWithImage.self))
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
-        $0.decelerationRate = UIScrollViewDecelerationRateFast
         $0.contentInsetAdjustmentBehavior = .always
         $0.bounces = true
         $0.backgroundColor = .clear
@@ -188,6 +187,8 @@ final class PhotoLibraryPickerViewController: UIViewController {
                 self.alertController?.dismiss(animated: true)
             }
             alert.show()
+        case .limited:
+            print("limited")
         }
     }
     
