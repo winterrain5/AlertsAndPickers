@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlertsAndPickers'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Advanced usage of native UIAlertController with TextField, TextView, DatePicker, PickerView, TableView, CollectionView and MapView.'
 
 # This description is used to generate tags and improve search results.
