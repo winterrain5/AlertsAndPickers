@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'AlertsAndPickers_Example' do
+  pod 'AlertsAndPickers', :path => '../'
+
+  target 'AlertsAndPickers_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
