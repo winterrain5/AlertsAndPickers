@@ -12,29 +12,9 @@ import AudioToolbox
     ///   - message: alert controller's message (default is nil).
     ///   - defaultActionButtonTitle: default action button title (default is "OK")
     ///   - tintColor: alert controller's tint color (default is nil)
-    convenience init(style: UIAlertController.Style, title: String? = nil, message: String? = nil, viewSource: UIView? = nil,tintColor: UIColor? = nil) {
+    convenience init(style: UIAlertController.Style, title: String? = nil, message: String? = nil) {
         self.init(title: title, message: message, preferredStyle: style)
         
-        // TODO: for iPad or other views
-        let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
-        let root = UIApplication.shared.keyWindow?.rootViewController?.view
-        
-        //self.responds(to: #selector(getter: popoverPresentationController))
-        if let source = viewSource {
-            Log("----- source")
-            popoverPresentationController?.sourceView = source
-            popoverPresentationController?.sourceRect = source.bounds
-        } else if isPad, let source = root, style == .actionSheet {
-            Log("----- is pad")
-            popoverPresentationController?.sourceView = source
-            popoverPresentationController?.sourceRect = CGRect(x: source.bounds.midX, y: source.bounds.midY, width: 0, height: 0)
-            //popoverPresentationController?.permittedArrowDirections = .down
-            popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
-        }
-        
-        if let color = tintColor {
-            self.view.tintColor = color
-        }
     }
 }
 
