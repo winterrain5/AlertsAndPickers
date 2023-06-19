@@ -1,5 +1,5 @@
 PODS:
-  - AlertsAndPickers (0.2.0)
+  - AlertsAndPickers (0.3.0)
 
 DEPENDENCIES:
   - AlertsAndPickers (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AlertsAndPickers: 88199bc35bc66247377a7f71753787c0d9481284
+  AlertsAndPickers: 4e04b65b3341c0d211cb96ce3e59359b8c5a7176
 
 PODFILE CHECKSUM: 74221599d7cceed4e38aa226eda1df2e12f24bb8
 

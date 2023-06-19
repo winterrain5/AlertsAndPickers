@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIAlertController {
+public extension UIAlertController {
     
     /// Add a date picker
     ///
@@ -17,7 +17,7 @@ extension UIAlertController {
     }
 }
 
-final class DatePickerViewController: UIViewController {
+public class DatePickerViewController: UIViewController {
     
     public typealias Action = (Date) -> Void
     
@@ -31,6 +31,9 @@ final class DatePickerViewController: UIViewController {
     required init(mode: UIDatePicker.Mode, date: Date? = nil, minimumDate: Date? = nil, maximumDate: Date? = nil, action: Action?) {
         super.init(nibName: nil, bundle: nil)
         datePicker.datePickerMode = mode
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
         datePicker.date = date ?? Date()
         datePicker.minimumDate = minimumDate
         datePicker.maximumDate = maximumDate
@@ -45,7 +48,7 @@ final class DatePickerViewController: UIViewController {
         Log("has deinitialized")
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = datePicker
     }
     

@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIAlertController {
+public extension UIAlertController {
     
     /// Add a textField
     ///
@@ -17,7 +17,7 @@ extension UIAlertController {
     }
 }
 
-final class OneTextFieldViewController: UIViewController {
+public final class OneTextFieldViewController: UIViewController {
     
     fileprivate lazy var textField: TextField = TextField()
     
@@ -50,12 +50,7 @@ final class OneTextFieldViewController: UIViewController {
         Log("has deinitialized")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         textField.width = view.width - ui.hInset * 2

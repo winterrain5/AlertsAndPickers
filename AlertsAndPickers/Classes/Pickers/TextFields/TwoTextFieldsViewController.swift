@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIAlertController {
+public extension UIAlertController {
     
     /// Add two textField
     ///
@@ -17,7 +17,7 @@ extension UIAlertController {
     }
 }
 
-final class TwoTextFieldsViewController: UIViewController {
+public final class TwoTextFieldsViewController: UIViewController {
     
     fileprivate lazy var textFieldView: UIView = UIView()
     fileprivate lazy var textFieldOne: TextField = TextField()
@@ -58,12 +58,12 @@ final class TwoTextFieldsViewController: UIViewController {
         Log("has deinitialized")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         textFieldView.width = view.width - hInset * 2

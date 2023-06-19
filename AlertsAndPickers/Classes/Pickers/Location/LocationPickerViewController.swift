@@ -4,7 +4,7 @@ import CoreLocation
 
 /// Based on https://github.com/almassapargali/LocationPicker
 
-extension UIAlertController {
+public extension UIAlertController {
     
     /// Add PhotoLibrary Picker
     ///
@@ -19,7 +19,7 @@ extension UIAlertController {
     }
 }
 
-final class LocationPickerViewController: UIViewController {
+public final class LocationPickerViewController: UIViewController {
 	
     struct CurrentLocationListener {
 		let once: Bool
@@ -107,7 +107,6 @@ final class LocationPickerViewController: UIViewController {
 		
 		$0.searchResultsUpdater = self
         $0.searchBar.delegate = self
-        $0.dimsBackgroundDuringPresentation = true
         /// true if search bar in tableView header
 		$0.hidesNavigationBarDuringPresentation = true
         $0.searchBar.placeholder = searchBarPlaceholder

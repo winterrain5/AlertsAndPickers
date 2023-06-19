@@ -1,7 +1,7 @@
 import UIKit
 import ContactsUI
 
-extension UIAlertController {
+public extension UIAlertController {
     
     /// Add Contacts Picker
     ///
@@ -27,7 +27,7 @@ extension UIAlertController {
     }
 }
 
-final class ContactsPickerViewController: UIViewController {
+public final class ContactsPickerViewController: UIViewController {
     
     // MARK: UI Metrics
     
@@ -40,7 +40,7 @@ final class ContactsPickerViewController: UIViewController {
     
     public typealias Selection = (Contact?) -> ()
     
-    fileprivate var selection: Selection?
+    var selection: Selection?
     
     //Contacts ordered in dicitonary alphabetically
     fileprivate var orderedContacts = [String: [CNContact]]()
@@ -54,7 +54,6 @@ final class ContactsPickerViewController: UIViewController {
     fileprivate lazy var searchController: UISearchController = {
         $0.searchResultsUpdater = self
         $0.searchBar.delegate = self
-        $0.dimsBackgroundDuringPresentation = false
         /// true if search bar in tableView header
         $0.hidesNavigationBarDuringPresentation = true
         $0.searchBar.searchBarStyle = .minimal
@@ -96,11 +95,11 @@ final class ContactsPickerViewController: UIViewController {
         Log("has deinitialized")
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = tableView
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -117,7 +116,7 @@ final class ContactsPickerViewController: UIViewController {
         updateContacts()
     }
     
-    override func viewWillLayoutSubviews() {
+    public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         tableView.tableHeaderView?.height = 57
         searchController.searchBar.sizeToFit()
@@ -125,7 +124,7 @@ final class ContactsPickerViewController: UIViewController {
         searchController.searchBar.frame.size.height = searchView.frame.size.height
     }
     
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         preferredContentSize.height = tableView.contentSize.height
         Log("preferredContentSize.height = \(preferredContentSize.height), tableView.contentSize.height = \(tableView.contentSize.height)")
@@ -177,6 +176,8 @@ final class ContactsPickerViewController: UIViewController {
                 self.alertController?.dismiss(animated: true)
             }
             alert.show()
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -235,7 +236,7 @@ final class ContactsPickerViewController: UIViewController {
 
 extension ContactsPickerViewController: UISearchResultsUpdating {
     
-    func updateSearchResults(for searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchController.isActive {
             Contacts.searchContact(searchString: searchText) { [unowned self] result in
                 switch result {
@@ -261,7 +262,7 @@ extension ContactsPickerViewController: UISearchResultsUpdating {
 
 extension ContactsPickerViewController: UISearchBarDelegate {
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
     }
 }
@@ -270,7 +271,7 @@ extension ContactsPickerViewController: UISearchBarDelegate {
 
 extension ContactsPickerViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let contact = contact(at: indexPath) else { return }
         selectedContact = contact
         Log(selectedContact?.displayName)
@@ -282,12 +283,12 @@ extension ContactsPickerViewController: UITableViewDelegate {
 
 extension ContactsPickerViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         if searchController.isActive { return 1 }
         return sortedContactKeys.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive { return filteredContacts.count }
         if let contactsForSection = orderedContacts[sortedContactKeys[section]] {
             return contactsForSection.count
@@ -295,23 +296,23 @@ extension ContactsPickerViewController: UITableViewDataSource {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+    public func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         if searchController.isActive { return 0 }
         tableView.scrollToRow(at: IndexPath(row: 0, section: index), at: .top , animated: false)
-        return sortedContactKeys.index(of: title)!
+        return sortedContactKeys.firstIndex(of: title)!
     }
     
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+    public func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         if searchController.isActive { return nil }
         return sortedContactKeys
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if searchController.isActive { return nil }
         return sortedContactKeys[section]
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.identifier) as! ContactTableViewCell
        
         guard let contact = contact(at: indexPath) else { return UITableViewCell() }

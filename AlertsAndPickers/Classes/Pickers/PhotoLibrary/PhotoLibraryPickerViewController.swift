@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import Photos
 
-extension UIAlertController {
+public extension UIAlertController {
     
     /// Add PhotoLibrary Picker
     ///
@@ -56,7 +56,7 @@ extension UIAlertController {
     }
 }
 
-final class PhotoLibraryPickerViewController: UIViewController {
+public final class PhotoLibraryPickerViewController: UIViewController {
     
     public typealias SingleSelection = (PHAsset?) -> Swift.Void
     public typealias MultipleSelection = ([PHAsset]) -> Swift.Void
@@ -76,6 +76,8 @@ final class PhotoLibraryPickerViewController: UIViewController {
         switch layout.scrollDirection {
         case .vertical: return UIDevice.current.userInterfaceIdiom == .pad ? 3 : 2
         case .horizontal: return 1
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -85,6 +87,8 @@ final class PhotoLibraryPickerViewController: UIViewController {
             return CGSize(width: view.bounds.width / columns, height: view.bounds.width / columns)
         case .horizontal:
             return CGSize(width: view.bounds.width, height: view.bounds.height / columns)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -142,16 +146,16 @@ final class PhotoLibraryPickerViewController: UIViewController {
         Log("has deinitialized")
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = collectionView
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         updatePhotos()
     }
     
-    func updatePhotos() {
+    public func updatePhotos() {
         checkStatus { [unowned self] assets in
             self.assets.removeAll()
             self.assets.append(contentsOf: assets)
@@ -159,7 +163,7 @@ final class PhotoLibraryPickerViewController: UIViewController {
         }
     }
     
-    func checkStatus(completionHandler: @escaping ([PHAsset]) -> ()) {
+    public func checkStatus(completionHandler: @escaping ([PHAsset]) -> ()) {
         switch PHPhotoLibrary.authorizationStatus() {
             
         case .notDetermined:
@@ -189,10 +193,12 @@ final class PhotoLibraryPickerViewController: UIViewController {
             alert.show()
         case .limited:
             print("limited")
+        @unknown default:
+            fatalError()
         }
     }
     
-    func fetchPhotos(completionHandler: @escaping ([PHAsset]) -> ()) {
+    public func fetchPhotos(completionHandler: @escaping ([PHAsset]) -> ()) {
         Assets.fetch { [unowned self] result in
             switch result {
                 
@@ -214,7 +220,7 @@ final class PhotoLibraryPickerViewController: UIViewController {
 
 extension PhotoLibraryPickerViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let asset = assets[indexPath.item]
         switch selection {
             
@@ -230,7 +236,7 @@ extension PhotoLibraryPickerViewController: UICollectionViewDelegate {
         case .none: break }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let asset = assets[indexPath.item]
         switch selection {
         case .multiple(let action)?:
@@ -246,15 +252,15 @@ extension PhotoLibraryPickerViewController: UICollectionViewDelegate {
 
 extension PhotoLibraryPickerViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return assets.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ItemWithImage.self), for: indexPath) as? ItemWithImage else { return UICollectionViewCell() }
         let asset = assets[indexPath.item]
         Assets.resolve(asset: asset, size: item.bounds.size) { new in
