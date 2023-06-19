@@ -12,7 +12,7 @@ import AudioToolbox
     ///   - message: alert controller's message (default is nil).
     ///   - defaultActionButtonTitle: default action button title (default is "OK")
     ///   - tintColor: alert controller's tint color (default is nil)
-    convenience init(style: UIAlertController.Style, source: UIView? = nil, title: String? = nil, message: String? = nil, tintColor: UIColor? = nil) {
+    convenience init(style: UIAlertController.Style, title: String? = nil, message: String? = nil, viewSource: UIView? = nil,tintColor: UIColor? = nil) {
         self.init(title: title, message: message, preferredStyle: style)
         
         // TODO: for iPad or other views
@@ -20,7 +20,7 @@ import AudioToolbox
         let root = UIApplication.shared.keyWindow?.rootViewController?.view
         
         //self.responds(to: #selector(getter: popoverPresentationController))
-        if let source = source {
+        if let source = viewSource {
             Log("----- source")
             popoverPresentationController?.sourceView = source
             popoverPresentationController?.sourceRect = source.bounds
