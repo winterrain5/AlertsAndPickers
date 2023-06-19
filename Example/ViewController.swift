@@ -300,20 +300,20 @@ class ViewController: UIViewController {
             
         case .countryPicker:
             let alert = UIAlertController(style: self.alertStyle)
-            alert.addLocalePicker(type: .country) { info in Log(info) }
-            alert.addAction(title: "Cancel", style: .cancel)
+//            alert.addLocalePicker(type: .country) { info in Log(info) }
+//            alert.addAction(title: "Cancel", style: .cancel)
             alert.show()
             
         case .phoneCodePicker:
             let alert = UIAlertController(style: self.alertStyle)
-            alert.addLocalePicker(type: .phoneCode) { info in Log(info) }
-            alert.addAction(title: "Cancel", style: .cancel)
+//            alert.addLocalePicker(type: .phoneCode) { info in Log(info) }
+//            alert.addAction(title: "Cancel", style: .cancel)
             alert.show()
             
         case .currencyPicker:
             let alert = UIAlertController(style: self.alertStyle)
-            alert.addLocalePicker(type: .currency) { info in Log(info) }
-            alert.addAction(title: "Cancel", style: .cancel)
+//            alert.addLocalePicker(type: .currency) { info in Log(info) }
+//            alert.addAction(title: "Cancel", style: .cancel)
             alert.show()
             
         case .imagePicker:
