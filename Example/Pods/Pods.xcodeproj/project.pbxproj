@@ -56,7 +56,6 @@
 		D1409B44C3C21A2566CDBC7D4339850F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		D4C07CB3F695209AC49E72478860A2D7 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA8E220020C65AA4C2D9149BA5DEA6 /* Array+Extensions.swift */; };
 		D53C17097F66E472C799AFCD431E6E7E /* ItemWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650CFEB3E7FB9A3D62B5A3166967F06 /* ItemWithImage.swift */; };
-		D92CDABCB269AB89126B64570C824649 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E975D179DC0CAB2428BA3C1E04655 /* Date+Extension.swift */; };
 		DCBE4FF0541F9C1611B65C4A6BC09880 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4F963925681483101D6E7892B60F24 /* UIImageView+Extensions.swift */; };
 		DF8AD868DC5C72267B19579D3921DFB4 /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDC3961D0F40ECBB464A0B17F190226 /* GradientSlider.swift */; };
 		EADA3C8DEE3E21DA3167D2162327C8DC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897C993CA7469DDC48D41C2F7F0A253 /* Location.swift */; };
@@ -137,7 +136,6 @@
 		828C6FDA92837970A33F849E52ECB978 /* OneTextFieldViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OneTextFieldViewController.swift; sourceTree = "<group>"; };
 		82B3D94FA357744471192AD686077512 /* DatePickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		84E45ACF2D0C52DED75CA2541BD61B81 /* AlertsAndPickers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertsAndPickers.release.xcconfig; sourceTree = "<group>"; };
-		867E975D179DC0CAB2428BA3C1E04655 /* Date+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		888D0DDD9A2BB2F332566371209BABE6 /* Pods-AlertsAndPickers_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlertsAndPickers_Example-Info.plist"; sourceTree = "<group>"; };
 		8C5F197BFC797FEA6C4B5B07CC5635B5 /* AlertsAndPickers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertsAndPickers.debug.xcconfig; sourceTree = "<group>"; };
 		8E1E77B7A748CDF936C4F3BAB52D0DC5 /* ContactCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
@@ -569,7 +567,6 @@
 			children = (
 				D3CA8E220020C65AA4C2D9149BA5DEA6 /* Array+Extensions.swift */,
 				2F46E6056D78976B430AD3654E02E38E /* Common+Extensions.swift */,
-				867E975D179DC0CAB2428BA3C1E04655 /* Date+Extension.swift */,
 				C959F98E4624797749EE9B90C9376053 /* Locale+Extensions.swift */,
 				204B97AC63A9C975EA9BE274E2A8D9F6 /* Optional+Extensions.swift */,
 				A84E2D71D2805DF3A87AA57D6A32BFC0 /* String+Extensions.swift */,
@@ -815,7 +812,6 @@
 				68E61FEC662B5A834E1275A62AAD2F8E /* ContactsPickerViewController.swift in Sources */,
 				56187A0A078292B0EE4AF91E93FC8985 /* CountryCell.swift in Sources */,
 				F36EBC5D94043BF122F6C491C355B585 /* CurrencyCell.swift in Sources */,
-				D92CDABCB269AB89126B64570C824649 /* Date+Extension.swift in Sources */,
 				6ECA0C1B1504D1672CD3CBFF2AE62214 /* DatePickerViewController.swift in Sources */,
 				DF8AD868DC5C72267B19579D3921DFB4 /* GradientSlider.swift in Sources */,
 				16D553E6CF7999C197D1825255294463 /* ImagePickerViewController.swift in Sources */,
